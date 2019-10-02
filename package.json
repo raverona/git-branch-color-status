@@ -1,7 +1,7 @@
 {
   "name": "git-color-status",
   "version": "1.0.0",
-  "description": "Utility that checks the state of the gi repository in the current directory and represents it with symbols and colors",
+  "description": "Utility that checks the state of the git repository in the current directory and represents it with symbols and colors",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
