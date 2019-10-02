@@ -8,6 +8,8 @@ It's a small program to inform you the current state of your repository through 
 
 It's a Shell script that checks the state of the git repository present on the current directory and displays it thorugh symbols and colors
 
+## Requirements
+
 ## How to use it?
 
 ## Symbols and Colors available
