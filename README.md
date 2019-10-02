@@ -10,7 +10,22 @@ It's a Shell script that checks the state of the git repository present on the c
 
 ## How to use it?
 
+## Symbols and Colors available
 
+### Symbols
+
+- \>
+- \*
+- \+
+- ?
+- x
+- !
+
+### Colors
+
+- Green
+- Yellow
+- Red
 
 ## How to contribute
 
