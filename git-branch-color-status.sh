@@ -78,6 +78,6 @@ getGitBranchColor() {
 
 if isGitFolder; then
     if isNotEmptyRepository; then 
-        echo $(getGitBranchColor)$(getGitBranchAndStatus);
+        echo -e $(getGitBranchColor)$(getGitBranchAndStatus)$COLOR_RESET;
     fi
 fi
