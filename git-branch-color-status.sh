@@ -1,32 +1,34 @@
+#!/usr/bin/env bash
+
 COLOR_RED="\e[0;31m"
 COLOR_YELLOW="\e[0;33m"
 COLOR_GREEN="\e[0;32m"
 COLOR_OCHRE="\e[38;5;95m"
 COLOR_RESET="\e[0m"
 
-function isGitFolder {
+isGitFolder() {
     git rev-parse --git-dir > /dev/null 2>&1
 }
 
-function isNotEmptyRepository {
+isNotEmptyRepository() {
     git show-ref > /dev/null 2>&1
 }
 
-function getGitBranch {
+getGitBranch() {
     git rev-parse --abbrev-ref HEAD
 }
 
-function getGitBranchRemote {
+getGitBranchRemote() {
     git \for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD)
 }
 
-function getGitBranchAndStatus {
+getGitBranchAndStatus() {
 	BRANCH=$(getGitBranch)
-	STAT=$(parseGitStatus)
-	echo "[${BRANCH}${STAT}]"
+	STATUS=$(parseGitStatus)
+	echo "[${BRANCH}${STATUS}]"
 }
 
-function parseGitStatus {
+parseGitStatus() {
 	status=`git status 2>&1`
 	dirty=`echo -n "${status}" 2> /dev/null | grep "modified:" &> /dev/null; echo "$?"`
 	untracked=`echo -n "${status}" 2> /dev/null | grep "Untracked files" &> /dev/null; echo "$?"`
@@ -60,11 +62,8 @@ function parseGitStatus {
 	fi
 }
 
-function getGitBranchColor {
+getGitBranchColor() {
   git_status="$(git status 2> /dev/null)"
-  # git_local_commits="$(git log origin/$(getGitBranch)..HEAD)"
-
-  # echo $git_local_commits
 
   if [[ ! $git_status =~ "working tree clean" ]]; then
     echo -e $COLOR_RED
@@ -77,7 +76,7 @@ function getGitBranchColor {
   fi
 }
 
-if isGitFolder; then 
+if isGitFolder; then
     if isNotEmptyRepository; then 
         echo $(getGitBranchColor)$(getGitBranchAndStatus);
     fi

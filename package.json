@@ -1,0 +1,29 @@
+{
+  "name": "git-color-status",
+  "version": "1.0.0",
+  "description": "Utility that checks the state of the gi repository in the current directory and represents it with symbols and colors",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raverona/git-color-status-ps1.git"
+  },
+  "keywords": [
+    "git",
+    "color",
+    "status"
+  ],
+  "author": "raverona",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raverona/git-color-status-ps1/issues"
+  },
+  "homepage": "https://github.com/raverona/git-color-status-ps1#readme",
+  "dependencies": {
+    "shelljs": "^0.8.3"
+  },
+  "bin": {
+    "git-color-status": "./cli.js"
+  }
+}
