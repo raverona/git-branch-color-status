@@ -1,5 +1,5 @@
 {
-  "name": "git-color-status",
+  "name": "git-branch-color-status",
   "version": "1.0.0",
   "description": "Utility that checks the state of the git repository in the current directory and represents it with symbols and colors",
   "scripts": {
