@@ -1,4 +1,4 @@
-# Git Color Status PS1
+# Git Branch Color Status
 
 ## What is this?
 
@@ -10,7 +10,13 @@ It's a Shell script that checks the state of the git repository present on the c
 
 ## Requirements
 
+- [NodeJS](https://nodejs.org) and [NPM](https://www.npmjs.com/)
+- [Bash](https://www.gnu.org/software/bash/)
+
 ## How to use it?
+
+- Install it by executing `npm install`
+- Configure your PS1 on your .bashrc file like this `PS1+="\$(git-branch-color-status)";`
 
 ## Symbols and Colors available
 
