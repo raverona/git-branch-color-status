@@ -1,10 +1,19 @@
 #!/usr/bin/env bash
 
-COLOR_RED="\001\033[0;31m\002"
-COLOR_YELLOW="\001\033[0;33m\002"
-COLOR_GREEN="\001\033[0;32m\002"
-COLOR_OCHRE="\001\033[38;5;95m\002"
-COLOR_RESET="\001\033[0m\002"
+if [ "$1" == "--no-color" ]
+then
+  COLOR_RED=""
+  COLOR_YELLOW=""
+  COLOR_GREEN=""
+  COLOR_OCHRE=""
+  COLOR_RESET=""
+else
+  COLOR_RED="\001\033[0;31m\002"
+  COLOR_YELLOW="\001\033[0;33m\002"
+  COLOR_GREEN="\001\033[0;32m\002"
+  COLOR_OCHRE="\001\033[38;5;95m\002"
+  COLOR_RESET="\001\033[0m\002"
+fi
 
 isGitFolder() {
     git rev-parse --git-dir > /dev/null 2>&1
