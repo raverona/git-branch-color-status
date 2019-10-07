@@ -22,18 +22,18 @@ It's a Shell script that checks the state of the git repository present on the c
 
 ### Symbols
 
-- \>
-- \*
-- \+
-- ?
-- x
-- !
+- \> -> There are renamed files being tracked
+- \* -> Your branch is ahead of remote
+- \+ -> There are new files being tracked
+- ? -> There are untracked files
+- x -> There are deleted tracked files
+- ! -> There are modified tracked files
 
 ### Colors
 
-- Green
-- Yellow
-- Red
+- Green -> Working tree clean, nothing to commit
+- Yellow -> Your branch is ahead of remote branch
+- Red -> Working tree not clean
 
 ## How to contribute
 
