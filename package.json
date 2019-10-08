@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/raverona/git-color-status-ps1.git"
+    "url": "git+https://github.com/raverona/git-branch-color-status.git"
   },
   "keywords": [
     "git",
@@ -17,13 +17,16 @@
   "author": "raverona",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/raverona/git-color-status-ps1/issues"
+    "url": "https://github.com/raverona/git-branch-color-status/issues"
   },
-  "homepage": "https://github.com/raverona/git-color-status-ps1#readme",
+  "homepage": "https://github.com/raverona/git-branch-color-status#readme",
   "dependencies": {
-    "shelljs": "^0.8.3"
+    "shelljs": "^0.8.3",
+    "yargs": "^14.2.0"
   },
-  "bin": {
-    "git-color-status": "./cli.js"
+  "bin": "src/CLI.js",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.1"
   }
 }
