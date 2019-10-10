@@ -6,6 +6,8 @@ COLOR_GREEN="\001\033[0;32m\002"
 COLOR_OCHRE="\001\033[38;5;95m\002"
 COLOR_RESET="\001\033[0m\002"
 
+NO_COLOR=$1
+
 isGitFolder() {
     git rev-parse --git-dir > /dev/null 2>&1
 }
@@ -77,7 +79,11 @@ getGitBranchColor() {
 }
 
 if isGitFolder; then
-    if isNotEmptyRepository; then 
-        echo -e "$(getGitBranchColor)$(getGitBranchAndStatus)$COLOR_RESET";
+    if isNotEmptyRepository; then
+        if $NO_COLOR; then
+          getGitBranchAndStatus;
+        else
+          echo -e "$(getGitBranchColor)$(getGitBranchAndStatus)$COLOR_RESET";
+        fi
     fi
 fi
