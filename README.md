@@ -15,7 +15,7 @@ It's a Shell script that checks the state of the git repository present on the c
 
 ## How to use it?
 
-- Install it by executing `npm install`
+- Install it by executing `sudo npm install -g git-branch-color-status`
 - Configure your PS1 on your .bashrc file like this `PS1+="\$(git-branch-color-status)";`
 
 ### Options available
