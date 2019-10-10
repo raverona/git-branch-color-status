@@ -18,6 +18,10 @@ It's a Shell script that checks the state of the git repository present on the c
 - Install it by executing `npm install`
 - Configure your PS1 on your .bashrc file like this `PS1+="\$(git-branch-color-status)";`
 
+### Options available
+
+- `--nc` or `--no-color` to output without color
+
 ## Symbols and Colors available
 
 ### Symbols
