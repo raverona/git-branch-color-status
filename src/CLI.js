@@ -22,4 +22,4 @@ function getAppName() {
     return require('../package').name;
 }
 
-gitBranchColorStatus.getGitBranchColorStatus(args.noColor);
+process.stdout.write(gitBranchColorStatus.getGitBranchColorStatus(args.noColor));
