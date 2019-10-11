@@ -26,9 +26,9 @@ It's a Shell script that checks the state of the git repository present on the c
 
 ### Exemples
 
-- `git-branch-color-status` produces ![word "master" in green surrounded by square brackets](doc/img/ColoredExample.png "colored branch name surrounded by square brackets")
-- `git-branch-color-status --nc` produces ![word "master" in white surrounded by square brackets](doc/img/NoColorExample.png "non-colored branch name surrounded by square brackets") 
-- `git-branch-color-status --nc --bracket=round` produces ![word "master" in white surrounded by round brackets](./doc/img/NoColorRoundBracketExample.png "non-colored branch name surrounded by round brackets") 
+- `git-branch-color-status` outputs ![word "master" colored in green surrounded by square brackets](doc/img/examples/ColoredExample.png "colored branch name surrounded by square brackets")
+- `git-branch-color-status --nc` outputs ![word "master" colored in white surrounded by square brackets](doc/img/examples/NoColorExample.png "non-colored branch name surrounded by square brackets") 
+- `git-branch-color-status --nc --bracket=round` outputs ![word "master" colored in white surrounded by round brackets](doc/img/examples/NoColorRoundBracketExample.png "non-colored branch name surrounded by round brackets") 
 
 ## Symbols and Colors available
 
@@ -43,9 +43,9 @@ It's a Shell script that checks the state of the git repository present on the c
 
 ### Colors
 
-- ![#008000](https://placehold.it/15/008000/000000?text=+ "Green")`Green` -> Working tree clean, nothing to commit
-- ![#ffff00](https://placehold.it/15/ffff00/000000?text=+ "Yellow")`Yellow` -> Your branch is ahead of remote branch
-- ![#ff0000](https://placehold.it/15/ff0000/000000?text=+ "Red")`Red` -> Working tree not clean
+- ![word "Green" colored in green](doc/img/text/GreenText.png "Green") -> Working tree clean, nothing to commit
+- ![word "Yellow" colored in yellow](doc/img/text/YellowText.png "Yellow") -> Your branch is ahead of remote branch
+- ![word "Red" colored in red](doc/img/text/RedText.png "Red") -> Working tree not clean
 
 ## How to contribute
 
