@@ -21,6 +21,14 @@ It's a Shell script that checks the state of the git repository present on the c
 ### Options available
 
 - `--nc` or `--no-color` to output without color
+- `-b` or `--bracket` to specify the type of brackets displayed surrounding the branch status
+    - The available types of brackets are: "square" (default), "round" and "curly"
+
+### Exemples
+
+- `git-branch-color-status` produces ![word "master" in green surrounded by square brackets](doc/img/ColoredExample.png "colored branch name surrounded by square brackets")
+- `git-branch-color-status --nc` produces ![word "master" in white surrounded by square brackets](doc/img/NoColorExample.png "non-colored branch name surrounded by square brackets") 
+- `git-branch-color-status --nc --bracket=round` produces ![word "master" in white surrounded by round brackets](./doc/img/NoColorRoundBracketExample.png "non-colored branch name surrounded by round brackets") 
 
 ## Symbols and Colors available
 
@@ -35,9 +43,9 @@ It's a Shell script that checks the state of the git repository present on the c
 
 ### Colors
 
-- ![#008000](https://placehold.it/15/008000/000000?text=+)`Green` -> Working tree clean, nothing to commit
-- ![#ffff00](https://placehold.it/15/ffff00/000000?text=+)`Yellow` -> Your branch is ahead of remote branch
-- ![#ff0000](https://placehold.it/15/ff0000/000000?text=+)`Red` -> Working tree not clean
+- ![#008000](https://placehold.it/15/008000/000000?text=+ "Green")`Green` -> Working tree clean, nothing to commit
+- ![#ffff00](https://placehold.it/15/ffff00/000000?text=+ "Yellow")`Yellow` -> Your branch is ahead of remote branch
+- ![#ff0000](https://placehold.it/15/ff0000/000000?text=+ "Red")`Red` -> Working tree not clean
 
 ## How to contribute
 
