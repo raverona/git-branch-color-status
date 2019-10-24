@@ -17,7 +17,7 @@ const args = require('yargs')
         default: true,
         nargs: 0
     })
-    .option('brackets', {
+    .option('bracket', {
         alias: 'b',
         describe: 'Select brackets type',
         type: 'string',
