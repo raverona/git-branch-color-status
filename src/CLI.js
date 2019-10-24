@@ -10,11 +10,12 @@ const args = require('yargs')
     .help('h')
     .alias('h', 'help')
     .showHelpOnFail(false, 'Specify --help for available options')
-    .option('no-color', {
-        alias: 'nc',
-        describe: 'Output without color',
+    .option('color', {
+        alias: 'c',
+        describe: 'Enable or disable output with color',
         type: 'boolean',
-        default: false
+        default: true,
+        nargs: 0
     })
     .option('brackets', {
         alias: 'b',
@@ -30,4 +31,4 @@ function getAppName() {
     return require('../package').name;
 }
 
-process.stdout.write(gitBranchColorStatus.getGitBranchColorStatus(args.noColor));
+process.stdout.write(gitBranchColorStatus.getGitBranchColorStatus(args));
