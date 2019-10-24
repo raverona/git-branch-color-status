@@ -31,7 +31,7 @@ function surroundWithBrackets(string, bracketType) {
 }
 
 function getGitBranchColorStatus(options) {
-    let gitBranchColorStatus = surroundWithBrackets(getGitBranchStatus(), options.brackets);
+    let gitBranchColorStatus = surroundWithBrackets(getGitBranchStatus(), options.bracket);
 
     if (options.color) {
         gitBranchColorStatus = applyColors(setGitBranchColor(gitBranchColorStatus))
