@@ -29,6 +29,8 @@ function surroundWithBrackets(string, bracketType) {
             default:
                 throw `Bracket type ${bracketType} not supported`
         }
+    else
+        return ""
 }
 
 function getGitBranchColorStatus(options) {
