@@ -18,16 +18,17 @@ function getGitBranchStatus() {
 }
 
 function surroundWithBrackets(string, bracketType) {
-    switch (bracketType) {
-        case "square":
-            return `[${string}]`;
-        case "round":
-            return `(${string})`;
-        case "curly":
-            return `{${string}}`;
-        default:
-            throw `Bracket type ${bracketType} not supported`
-    }
+    if (string)
+        switch (bracketType) {
+            case "square":
+                return `[${string}]`;
+            case "round":
+                return `(${string})`;
+            case "curly":
+                return `{${string}}`;
+            default:
+                throw `Bracket type ${bracketType} not supported`
+        }
 }
 
 function getGitBranchColorStatus(options) {
