@@ -1,4 +1,5 @@
 # Git Branch Color Status
+version: 1.1.4
 
 ## What is this?
 
