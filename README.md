@@ -1,5 +1,6 @@
 # Git Branch Color Status
 version: 1.1.4
+status: actively developed
 
 ## What is this?
 
