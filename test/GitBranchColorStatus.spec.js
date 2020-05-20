@@ -2,16 +2,16 @@ const { expect } = require('chai');
 const sinon = require('sinon');
 
 const Branch = require("../src/git/Branch");
-const Color = require("../src/git/Color");
-const BracketFactory = require("../src/bracket/BracketFactory");
+const Red = require("../src/git/color/Red");
+const SquareBracket = require("../src/bracket/SquareBracket");
 const Symbols = require("../src/git/Symbols");
 
 const GitBranchColorStatus = require("../src/GitBranchColorStatus");
 
 describe('GitBranchColorStatus', function () {
     let branch = new Branch();
-    let color = new Color();
-    let bracket = new BracketFactory().build("square");
+    let color = new Red();
+    let bracket = new SquareBracket();
     let symbols = new Symbols();
 
     let colorRed = "\\001\\033[0;32m\\002";
@@ -22,7 +22,7 @@ describe('GitBranchColorStatus', function () {
     let colorReset = "\\001\\033[0m\\002";
 
     before(function () {
-        sinon.stub(color, "color").callsFake(() => colorRed);
+        sinon.stub(color, "code").callsFake(() => colorRed);
         sinon.stub(bracket, "open").callsFake(() => openSquareBracket);
         sinon.stub(branch, "name").callsFake(() => branchName);
         sinon.stub(symbols, "printAll").callsFake(() => allSymbols);
