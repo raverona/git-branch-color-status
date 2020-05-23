@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/raverona/git-branch-color-status#readme",
   "dependencies": {
-    "shelljs": "^0.8.3",
+    "shelljs": "^0.8.4",
     "yargs": "^14.2.0"
   },
   "bin": "src/CLI.js",
