@@ -4,9 +4,15 @@ const Red = require("./Red");
 const Yellow = require("./Yellow");
 const Green = require("./Green");
 const Ochre = require("./Ochre");
+const NoColor = require("./NoColor");
 
 class ColorFactory {
-    build(status) {
+    build(status, isColored) {
+        if (isColored) return this.buildColored(status);
+        return this.buildUncolored();
+    }
+
+    buildColored(status) {
         if (!status.status().match(/working tree clean/)) {
             return new Red();
         } else if (status.status().match(/Your branch is ahead of/)) {
@@ -16,6 +22,10 @@ class ColorFactory {
         } else {
             return new Ochre();
         }
+    }
+
+    buildUncolored() {
+        return new NoColor();
     }
 }
 
