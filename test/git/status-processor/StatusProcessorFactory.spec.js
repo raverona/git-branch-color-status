@@ -17,27 +17,27 @@ describe('StatusProcessorFactory', function () {
             expect(statusProcessorFactory.allStatusProcessors()).to.be.an("array")
         });
 
-        it('should be have the dirty processor', function () {
+        it('should have the dirty processor', function () {
             expect(statusProcessorFactory.allStatusProcessors()).to.deep.include(new Dirty())
         });
 
-        it('should be have the ahead processor', function () {
+        it('should have the ahead processor', function () {
             expect(statusProcessorFactory.allStatusProcessors()).to.deep.include(new Ahead())
         });
 
-        it('should be have the deleted processor', function () {
+        it('should have the deleted processor', function () {
             expect(statusProcessorFactory.allStatusProcessors()).to.deep.include(new Deleted())
         });
 
-        it('should be have the newfile processor', function () {
+        it('should have the newfile processor', function () {
             expect(statusProcessorFactory.allStatusProcessors()).to.deep.include(new NewFile())
         });
 
-        it('should be have the untracked processor', function () {
+        it('should have the untracked processor', function () {
             expect(statusProcessorFactory.allStatusProcessors()).to.deep.include(new Untracked())
         });
 
-        it('should be have the renamed processor', function () {
+        it('should have the renamed processor', function () {
             expect(statusProcessorFactory.allStatusProcessors()).to.deep.include(new Renamed())
         });
     });
