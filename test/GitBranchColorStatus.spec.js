@@ -5,7 +5,7 @@ const Git = require("../src/git/Git");
 const Branch = require("../src/git/Branch");
 const Red = require("../src/git/color/Red");
 const SquareBracket = require("../src/bracket/SquareBracket");
-const Symbols = require("../src/git/symbol/Symbols");
+const Symbols = require("../src/git/Symbols");
 
 const GitBranchColorStatus = require("../src/GitBranchColorStatus");
 

@@ -1,6 +1,6 @@
 const {expect} = require('chai');
 
-const Symbols = require("../../../src/git/symbol/Symbols");
+const Symbols = require("../../src/git/Symbols");
 
 describe('Symbols', function () {
     let symbols = new Symbols(
