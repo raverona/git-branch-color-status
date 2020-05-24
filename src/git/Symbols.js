@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 class Symbols {
-    constructor(...statusProcessors) {
+    constructor(statusProcessors) {
         this.statusProcessors = statusProcessors;
     }
 
