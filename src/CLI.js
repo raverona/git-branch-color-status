@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const gitBranchColorStatus = require("./command/GitBranchColorStatus");
+const Main = require("./Main");
 
 const args = require('yargs')
     .strict()
@@ -31,4 +31,10 @@ function getAppName() {
     return require('../package').name;
 }
 
-process.stdout.write(gitBranchColorStatus.getGitBranchColorStatus(args));
+process.stdout.write(
+    new Main()
+        .gitBranchColorStatus(
+            args.color,
+            args.bracket
+        )
+);
