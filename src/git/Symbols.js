@@ -7,13 +7,14 @@ class Symbols {
     }
 
     printAll() {
-        return this.statusProcessors.map(
+        let symbols = this.statusProcessors.map(
             (statusProcessor) =>
                 statusProcessor.getSymbol(this.status)
         ).reduce(
             (acc, curr) =>
                 acc + curr
         );
+        return symbols ? ` ${symbols}` : ``;
     }
 }
 

@@ -9,7 +9,7 @@ class GitBranchColorStatus {
     }
 
     build() {
-        return `${this.color.code()}${this.bracket.open()}${this.branch.name()} ${this.symbols.printAll()}${this.bracket.close()}${this.color.reset()}`;
+        return `${this.color.code()}${this.bracket.open()}${this.branch.name()}${this.symbols.printAll()}${this.bracket.close()}${this.color.reset()}`;
     }
 }
 
