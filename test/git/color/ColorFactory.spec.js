@@ -1,5 +1,4 @@
 const {expect} = require('chai');
-const sinon = require('sinon');
 
 const Red = require("../../../src/git/color/Red");
 const Yellow = require("../../../src/git/color/Yellow");
@@ -7,24 +6,20 @@ const Green = require("../../../src/git/color/Green");
 const Ochre = require("../../../src/git/color/Ochre");
 const NoColor = require("../../../src/git/color/NoColor");
 
-const Status = require("../../../src/git/Status");
-
 const ColorFactory = require("../../../src/git/color/ColorFactory");
 
 describe('ColorFactory', function () {
     let colorFactory = new ColorFactory();
-    let status = new Status();
+    let status = "";
 
     describe('#build()', function () {
-        let statusStub;
 
         describe('If isColored is true', function () {
             let isColored = true;
 
             describe('When status does not mention \'working tree clean\'', function () {
                 before(function () {
-                    statusStub = sinon.stub(status, "status").callsFake(() =>
-                        "some git status");
+                    status = "some git status";
                 });
 
                 it('should return an instance of Red', function () {
@@ -34,8 +29,7 @@ describe('ColorFactory', function () {
 
             describe('When status mentions \'working tree clean\' and \'Your branch is ahead of\'', function () {
                 before(function () {
-                    statusStub = sinon.stub(status, "status").callsFake(() =>
-                        "some git status that has working tree clean and Your branch is ahead of among other stuff");
+                    status = "some git status that has working tree clean and Your branch is ahead of among other stuff";
                 });
 
                 it('should return an instance of Yellow', function () {
@@ -45,8 +39,7 @@ describe('ColorFactory', function () {
 
             describe('When status mentions \'working tree clean\' and \'nothing to commit\'', function () {
                 before(function () {
-                    statusStub = sinon.stub(status, "status").callsFake(() =>
-                        "some git status that has working tree clean and nothing to commit among other stuff");
+                    status = "some git status that has working tree clean and nothing to commit among other stuff";
                 });
 
                 it('should return an instance of Green', function () {
@@ -56,17 +49,12 @@ describe('ColorFactory', function () {
 
             describe('When status mentions \'working tree clean\' but does not mentions \'Your branch is ahead of\' and \'nothing to commit\'', function () {
                 before(function () {
-                    statusStub = sinon.stub(status, "status").callsFake(() =>
-                        "some git status that has working tree clean among other stuff");
+                    status = "some git status that has working tree clean among other stuff";
                 });
 
                 it('should return an instance of Ochre', function () {
                     expect(colorFactory.build(status, isColored)).to.be.instanceOf(Ochre);
                 });
-            });
-
-            afterEach(function () {
-                statusStub.restore();
             });
         });
 

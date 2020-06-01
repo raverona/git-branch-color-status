@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
 class GitBranchColorStatus {
-    constructor(git, branch, color, bracket, symbols) {
-        this.git = git;
+    constructor(branch, color, bracket, symbols) {
         this.branch = branch;
         this.color = color;
         this.bracket = bracket;
@@ -10,10 +9,7 @@ class GitBranchColorStatus {
     }
 
     build() {
-        if (this.git.isGitFolder())
-            if (this.git.isNotEmptyRepository())
-                return `${this.color.code()}${this.bracket.open()}${this.branch.name()} ${this.symbols.printAll()}${this.bracket.close()}${this.color.reset()}`;
-        return ``;
+        return `${this.color.code()}${this.bracket.open()}${this.branch.name()} ${this.symbols.printAll()}${this.bracket.close()}${this.color.reset()}`;
     }
 }
 

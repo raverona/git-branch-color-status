@@ -3,11 +3,7 @@
 const shell = require('shelljs');
 
 class Git {
-    isGitFolder() {
-        return shell.exec(`git rev-parse --git-dir > /dev/null 2>&1`, {silent: true}).code === 0;
-    }
-
-    isNotEmptyRepository() {
+    isNotEmptyGitRepository() {
         return shell.exec(`git show-ref > /dev/null 2>&1`, {silent: true}).code === 0;
     }
 }

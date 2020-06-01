@@ -13,11 +13,11 @@ class ColorFactory {
     }
 
     buildColored(status) {
-        if (!status.status().match(/working tree clean/)) {
+        if (!status.match(/working tree clean/)) {
             return new Red();
-        } else if (status.status().match(/Your branch is ahead of/)) {
+        } else if (status.match(/Your branch is ahead of/)) {
             return new Yellow();
-        } else if (status.status().match(/nothing to commit/)) {
+        } else if (status.match(/nothing to commit/)) {
             return new Green();
         } else {
             return new Ochre();
