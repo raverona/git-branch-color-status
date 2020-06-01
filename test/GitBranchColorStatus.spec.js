@@ -33,8 +33,8 @@ describe('GitBranchColorStatus', function () {
     });
 
     describe('#build()', function () {
-        it('should return the color code followed by the opening bracket, the branch name, a space, the symbols, the closing bracket and the color reset code', function () {
-            expect(gitBranchColorStatus.build()).to.be.equal(`${colorRed}${openSquareBracket}${branchName} ${allSymbols}${closeSquareBracket}${colorReset}`);
+        it('should return the color code followed by the opening bracket, the branch name, the symbols, the closing bracket and the color reset code', function () {
+            expect(gitBranchColorStatus.build()).to.be.equal(`${colorRed}${openSquareBracket}${branchName}${allSymbols}${closeSquareBracket}${colorReset}`);
         });
     });
 });
