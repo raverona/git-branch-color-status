@@ -16,7 +16,7 @@ class Branch {
             asterisk: /\*/.source,
             detachedHead: /\([a-zA-Z0-9\s]+\)/.source,
             localBranchName: /[^\s]*/.source,
-            lastCommitHash: /[a-zA-z0-9]{7}/.source,
+            lastCommitHash: /[a-zA-z0-9]+/.source,
             remoteBranchName: /\[[^\s]+\/[^\s]+]/.source,
             lastCommitMessage: /[^\n]*|[^\n\r]*/.source
         };
