@@ -3,7 +3,7 @@
   "version": "1.1.4",
   "description": "Utility that checks the state of the git repository in the current directory and represents it with symbols and colors",
   "scripts": {
-    "test": "mocha --recursive"
+    "test": "mocha \"./test/**/*.js\" \"./integrationTest/**/*.js\""
   },
   "repository": {
     "type": "git",
