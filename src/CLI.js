@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-const gitBranchColorStatus = require("./command/GitBranchColorStatus");
+const Main = require("./Main");
+const Git = require("./git/Git");
 
 const args = require('yargs')
     .strict()
@@ -31,4 +32,6 @@ function getAppName() {
     return require('../package').name;
 }
 
-process.stdout.write(gitBranchColorStatus.getGitBranchColorStatus(args));
+if (new Git().isNotEmptyGitRepository()) {
+    new Main().writeToSdtOut(args.color, args.bracket)
+}
