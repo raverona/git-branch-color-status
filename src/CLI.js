@@ -2,9 +2,6 @@
 
 const Main = require("./Main");
 const Git = require("./git/Git");
-const shelljs = require("shelljs");
-
-const git = new Git();
 
 const args = require('yargs')
     .strict()
@@ -35,11 +32,6 @@ function getAppName() {
     return require('../package').name;
 }
 
-if (git.isNotEmptyGitRepository()) {
-    process.stdout.write(
-        shelljs.exec(`echo \'${new Main().gitBranchColorStatus(
-            args.color,
-            args.bracket
-        )}\'`, {silent: true}).stdout
-    )
+if (new Git().isNotEmptyGitRepository()) {
+    new Main().writeToSdtOut(args.color, args.bracket)
 }

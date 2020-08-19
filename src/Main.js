@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+const shelljs = require('shelljs');
+
 const GitBranchColorStatus = require("./GitBranchColorStatus");
 const Status = require("./git/Status");
 const ColorFactory = require("./git/color/ColorFactory");
@@ -27,6 +29,15 @@ class Main {
             this.bracketFactory.build(bracketType),
             this.symbols
         ).build();
+    }
+
+    writeToSdtOut(color, bracket) {
+        process.stdout.write(
+            shelljs.exec(`echo \'${this.gitBranchColorStatus(
+                color,
+                bracket
+            )}\'`, {silent: true}).stdout
+        )
     }
 }
 
